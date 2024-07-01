@@ -1,0 +1,35 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="urn:org:jgroups"
+        xsi:schemaLocation="urn:org:jgroups http://www.jgroups.org/schema/jgroups-4.2.xsd">
+    <TCP bind_port="${dist.exec.bind.port:7810}"
+         bind_addr="${dist.exec.bind.addr:localhost}"
+         recv_buf_size="130k"
+         send_buf_size="130k"
+         sock_conn_timeout="300"
+         thread_pool.min_threads="0"
+         thread_pool.max_threads="20"
+         thread_pool.keep_alive_time="30000"/>
+    <RED/>
+
+    <TCPPING async_discovery="true"
+             initial_hosts="localhost[7810],localhost[7811],localhost[7812]"
+             port_range="2"/>
+    <MERGE3  min_interval="10000"
+             max_interval="30000"/>
+    <FD_SOCK/>
+    <FD_ALL timeout="9000" interval="3000" />
+    <VERIFY_SUSPECT timeout="1500"  />
+    <!--<BARRIER />-->
+    <pbcast.NAKACK2 use_mcast_xmit="false"
+                    discard_delivered_msgs="true"/>
+    <UNICAST3 />
+    <pbcast.STABLE desired_avg_gossip="50000"
+                   max_bytes="4M"/>
+    <pbcast.GMS print_local_addr="true" join_timeout="2000"/>
+    <UFC max_credits="2M"
+         min_threshold="0.4"/>
+    <MFC max_credits="2M"
+         min_threshold="0.4"/>
+    <FRAG2 frag_size="60K"  />
+    <pbcast.STATE_TRANSFER/>
+</config>

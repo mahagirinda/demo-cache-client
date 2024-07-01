@@ -1,0 +1,40 @@
+server.port=
+server.servletPath=/*
+server.context-path=/demo-client
+server.servlet.context-path=/demo-client
+
+# Remote Cache Repository URL
+#cache.server.context.url=
+cache.server.context.url=
+cache.server.refresh.interval.ms =
+
+# Library Mode / Embedded Cache Repository cluster configuration
+jdglib.jgroupConfigurationFile=my-jgroups.xml
+distributed.dist-executor.configXml=tcp-jgroups.xml
+
+spring.datasource.url=
+spring.datasource.username=
+spring.datasource.password=
+
+#Setting JDG client-server
+jdg.servers=
+jdgservice.host.address=
+
+#JMS Properties
+spring.activemq.broker-url=
+spring.activemq.user=
+spring.activemq.password=
+
+spring.main.allow-bean-definition-overriding=true
+spring.main.allow-circular-references=true
+
+#MONGODB
+mongo.db.database=
+mongo.db.hostname=
+mongo.db.portno=
+mongo.db.uri=
+
+spring.data.mongodb.uri=
+spring.data.mongodb.host=
+spring.data.mongodb.port=
+spring.data.mongodb.database=
